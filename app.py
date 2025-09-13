@@ -72,10 +72,12 @@ def admit():
     data['_id'] = str(data['_id'])
     return jsonify({"message": "Student admitted successfully", "admission": data})
 
-@app.route("/api/students/delete")
-def delete_all():
-    mongoclient['memnotes']['students'].delete_many({})
-    return jsonify({"message": "All students deleted successfully"})
+@app.route("/api/students/deletebyid/<string:regno>", methods=["DELETE"])
+def delete_by_id(regno):
+    result = mongoclient['memnotes']['students'].delete_one({"reg_no": regno})
+    if result.deleted_count == 0:
+        return jsonify({"message": "No student is there with that registration number"}), 404
+    return jsonify({"message": "Student deleted successfully!"})
 
 @app.route("/api/students/update/<string:regno>", methods=["PUT"])
 def update_student(regno):
