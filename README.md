@@ -14,10 +14,16 @@ This project consists of a backend API developed on Python (Flask) consisting of
 
 ---
 
-##  Tech Stack
+###  Tech Stack
 [![Python](https://img.shields.io/badge/Python-3776AB?logo=pytclickhon&logoColor=fff)](#)
 [![Flask](https://img.shields.io/badge/Flask-000?logo=flask&logoColor=fff)](#)
 [![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?logo=mongodb&logoColor=white)](#)
+
+### Installation
+```bash```
+python3 -m requirements.txt
+```
+This installs our major requirements such as Flask, PyMongo (official MongoDB driver for Python) and dotenv
 
 ### Endpoints
 | Endpoint | Method | Description |
