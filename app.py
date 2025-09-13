@@ -76,7 +76,7 @@ def admit():
 def delete_by_id(regno):
     result = mongoclient['memnotes']['students'].delete_one({"reg_no": regno})
     if result.deleted_count == 0:
-        return jsonify({"message": "No student is there with that registration number"}), 404
+        return jsonify({"message": "No student is there with given registration number"}), 404
     return jsonify({"message": "Student deleted successfully!"})
 
 @app.route("/api/students/update/<string:regno>", methods=["PUT"])
